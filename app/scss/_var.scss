@@ -1,0 +1,81 @@
+// задать все переменные по умолчанию, менять но не удалять
+
+$body_fontsize: 1.4rem;
+$body_lineheight: 1.5;
+$placeholdercolortext: #202020;
+$white_color: #ffffff;
+$default-font: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$accent_color: #202020;
+$secondary_color: #121212;
+$body_color_text: #ffffff;
+$z-index-sidebar: 1000;
+$z-index-header: 1000;
+$sidebar-width: 300px;
+$red_color: #ed3024;
+$blue_color: #3137c9;
+
+// эти переменные временные по внутренему контенту
+// миксины которыые возможно использовать во время версткиbys
+// @include font-face(OpenSansBold, sans-serif, null, 25, 18);
+// название стиль font-weght, база, размер шрифта
+
+@mixin font-face($name, $sanserif, $weight: null, $linebase: null, $fontsize:null) {
+  $rsize: $fontsize / 16;
+
+  font-family: quote($name), $sanserif;
+  font-weight: $weight;
+  font-size: $rsize * 1rem;
+  line-height: ($linebase / $fontsize );
+}
+
+// @include fontsize-lineheight(24, 16); расчет сразу и font-size и line-height
+
+@mixin fontsize-lineheight($lineheight, $fsize) {
+  $rembase: $fsize / 16;
+
+  font-size: $rembase * 1rem;
+  line-height: $lineheight / $fsize;
+}
+
+// @include lineheight(24, 16);  база для расчета и шрифт line-height
+@mixin lineheight($lineheight, $fsize) {
+  line-height: $lineheight / $fsize;
+}
+
+// только для вывода font-size в единицах rem
+//  @include font-size(20px);
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: calculaterem($size);
+}
+
+// @include padzero;
+
+@mixin padzero {
+  margin: 0;
+  padding: 0;
+}
+
+// @include transition(all, 0.2s, ease);
+//                   свойство время анимация
+@mixin transition($property, $duration, $timing, $delay:null) {
+  transition: $property $duration $timing $delay;
+}
+
+// @include pxrem(548, 16);
+@mixin pxrem($width, $widthbase) {
+  $lineheight: $width / $widthbase;
+
+  width: $lineheight * 1rem;
+}
+
+//   padding: rem(34px) rem(32px) rem(21px) 0;
+@function rem($size) {
+  @return $size / $body_fontsize * 1rem;
+}

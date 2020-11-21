@@ -1,0 +1,149 @@
+
+@import "var";
+
+.page {
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  max-width: 700px;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: $z-index-sidebar;
+  width: $sidebar-width;
+  height: 100vh;
+  box-shadow: 5px 0 15px rgba(5, 5, 5, 0.1);
+  background: $accent_color;
+}
+
+.main {
+  padding-top: 10rem;
+  padding-left: $sidebar-width;
+}
+
+.header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: $z-index-header;
+  width: calc(100% - #{$sidebar-width});
+  height: 30px;
+  box-shadow: 5px 0 15px rgba(5, 5, 5, 0.1);
+  background: $accent_color;
+}
+
+.sidebar__header {
+  height: 180px;
+  background: $accent_color url("../img/header_top_pic.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.sidebar__content {
+  margin-top: -5.85rem;
+  padding: 0 2rem;
+  max-width: $sidebar-width;
+}
+
+.header__img {
+  position: relative;
+  display: block;
+  margin: 0 auto 2rem;
+  border: 1px solid #202020;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 5px #ffffff, 0 0 35px rgba(5, 5, 5, 0.41);
+
+  // transform: translate(-50%, -50%);
+}
+
+.sidebar__name_autor {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.sidebar__position {
+  margin-top: 20px;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 1.1;
+  text-align: center;
+  color: #dedede;
+}
+
+.sidebar_sicial {
+  margin-top: 16px;
+
+  & ul {
+    text-align: center;
+  }
+
+  & ul li {
+    display: inline-block;
+  }
+
+  & ul li:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.sidebar__text {
+  margin: 55px 20px 60px;
+  border-top: 1px solid #1c1c1c;
+  border-bottom: 1px solid #1c1c1c;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  border: none;
+  border-radius: 3em;
+  padding: 1.13em 2.1em;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  text-decoration: none;
+  color: $white_color;
+  background-color: $secondary_color;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &__red {
+    box-shadow: 0 7px 17px -10px ($red_color, 0.3);
+    background-color: $red_color;
+  }
+
+  &__red:hover {
+    background-color: darken($red_color, 10%);
+  }
+
+  &__blue {
+    box-shadow: 0 7px 17px -10px ($blue_color, 0.3);
+    background-color: $blue_color;
+  }
+
+  &__blue:hover {
+    background-color: darken($blue_color, 10%);
+  }
+}
+
+.sidebar__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
