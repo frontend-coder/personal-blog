@@ -33,10 +33,99 @@
   right: 0;
   top: 0;
   z-index: $z-index-header;
+  display: flex;
   width: calc(100% - #{$sidebar-width});
-  height: 30px;
-  box-shadow: 5px 0 15px rgba(5, 5, 5, 0.1);
-  background: $accent_color;
+  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.25);
+  background: #0d0d0d;
+}
+
+.header__left {
+  width: 60%;
+}
+
+.header__right {
+  display: flex;
+  justify-content: flex-end;
+  width: 40%;
+}
+
+.top__search {
+  width: 100%;
+  max-width: 21rem;
+  background-color: $accent_color;
+}
+
+.top__search input {
+  display: block;
+  border: none;
+  padding: 1.2rem 2rem;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1.2rem;
+  color: $white_color;
+  background-color: transparent;
+
+  &::placeholder {
+    color: rgba($white_color, 0.4);
+  }
+}
+
+.top__nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.top__nav ul li a {
+  position: relative;
+  display: block;
+  padding: 1.35rem 1.98rem;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $white_color;
+  transition: background-color 0.2s linear;
+}
+
+.top__nav ul li a:hover {
+  background-color: $blue_color;
+}
+
+.menu-item-has-children >a::after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  display: block;
+  border-style: solid;
+  border-width: 6px 5px 0;
+  border-color: $white_color transparent transparent transparent;
+  font-size: 1.5rem;
+  transform: translate(50%, -50%);
+}
+
+.menu-item-has-children {
+  position: relative;
+}
+
+.menu-item-has-children ul {
+  position: absolute;
+  left: 0;
+  top: -100%;
+  min-width: 300px;
+  opacity: 0;
+  transition: top 0.2s linear 0.5s, opacity 0.02s linear;
+}
+
+.menu-item-has-children:hover ul {
+  top: 100%;
+  display: block;
+  opacity: 1;
+  transition: top 0.1s linear, opacity 0.5s linear;
+}
+
+.menu-item-has-children:hover a {
+  background-color: $blue_color;
 }
 
 .sidebar__header {
@@ -146,4 +235,157 @@
   display: flex;
   justify-content: space-between;
   padding: 0 2rem;
+}
+
+.stories {
+  display: grid;
+  grid-column-gap: 15px;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 195px;
+  margin-bottom: 30px;
+}
+
+.stories__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.stories__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba($accent_color, 0.8), rgba($secondary_color, 0.48) 50%, rgba($accent_color, 0.8));
+}
+
+.stories__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.stories__title,
+.stories__date {
+  position: absolute;
+  z-index: 3;
+  padding: 1.3rem;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.stories__title {
+  left: 0;
+  top: -100px;
+}
+
+.stories__date {
+  right: 0;
+  bottom: -100px;
+  text-align: right;
+}
+
+.stories__item:hover .stories__title {
+  left: 0;
+  top: 0;
+  animation-name: topdown;
+  animation-duration: 0.5s;
+}
+
+.stories__item:hover .stories__date {
+  left: 0;
+  bottom: 0;
+  animation-name: bottomup;
+  animation-duration: 0.75s;
+}
+
+@keyframes bottomup {
+  from {
+    bottom: -100px;
+  }
+
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes topdown {
+  from {
+    top: -100px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+.add__post {
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.45);
+  background-color: $secondary_color;
+
+  &__form {
+    display: flex;
+  }
+
+  &__textarea {
+    display: block;
+    border: none;
+    width: 75%;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: $white_color;
+    background-color: transparent;
+    resize: vertical;
+
+    &::placeholder {
+      color: #d2d2d2;
+    }
+  }
+}
+
+.add__post__action {
+  display: flex;
+  justify-content: space-evenly;
+  width: 25%;
+}
+
+.add__post__file {
+  display: block;
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background: #ebebeb url(../img/add-photo.svg) center no-repeat;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.add__post__file:hover {
+  background-color: darken(#ebebeb, 15%);
+}
+
+.add__post__file input {
+  display: none;
+}
+
+.send__shortpost {
+  display: block;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background: $blue_color url(../img/send-massage.svg) center no-repeat;
+  cursor: pointer;
+}
+
+.send__shortpost:hover {
+  background-color: darken($blue_color, 5%);
 }
