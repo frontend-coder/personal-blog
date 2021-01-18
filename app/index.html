@@ -33,7 +33,7 @@
 </head>
 <!-- Это первый комментарий -->
 
-<body>
+<body class="">
 
 
   <!-- Custom HTML -->
@@ -48,6 +48,26 @@
 
         <div class="sidebar__name_autor">Игорь Васильченко</div>
         <div class="sidebar__position">front-end разработка, сопровождение</div>
+
+
+<nav class=" mobile-nav">
+
+            <ul>
+              <li><a href="#">Главная</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Статьи</a>
+                <ul>
+                  <li><a href="#">Создание сайтов</a></li>
+                  <li><a href="#">Интернет-маркетинг</a></li>
+                  <li><a href="#">Продвижение видео</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Обо мне</a></li>
+              <li><a href="#">Реклама</a></li>
+            </ul>
+          </nav>
+
+
         <div class="sidebar_sicial">
           <ul>
             <li><a href="#"><img src="img/instagram.svg" alt="мой инстаграм"></a></li>
@@ -85,6 +105,9 @@
               <li><a href="#">Реклама</a></li>
             </ul>
           </nav>
+          <button class="burger active" type="button">
+            <span></span>
+          </button>
         </div>
         <div class="header__right">
           <nav class="top__nav profile__nav">
