@@ -3,6 +3,7 @@
 
 .page {
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .container {
@@ -220,8 +221,12 @@
     background-color: darken($red_color, 10%);
   }
 
+  &__rounded {
+    border-radius: 0.41rem;
+  }
+
   &__blue {
-    box-shadow: 0 7px 17px -10px ($blue_color, 0.3);
+    box-shadow: 0 7px 17px -10px rgba($blue_color, 0.5);
     background-color: $blue_color;
   }
 
@@ -408,6 +413,55 @@
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     color: #d2d2d2;
+
+    & a {
+      text-decoration: underline;
+      color: #d2d2d2;
+      transition: all 0.2s linear;
+
+      &:hover {
+        text-decoration: none;
+        color: #ffffff;
+      }
+    }
+
+    & p {
+      margin-bottom: 1.5rem;
+    }
+
+    & h2 {
+      font-size: 1.5rem;
+    }
+
+    & img {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      height: auto;
+    }
+
+    & h5,
+    & h6,
+    & h4,
+    & h3 {
+      font-size: 1.4rem;
+    }
+
+    & h5,
+    & h6,
+    & h4,
+    & h3,
+    & h2 {
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    & ol,
+    & ul {
+      list-style-position: inside;
+      margin-bottom: 1.5rem;
+      margin-left: 2rem;
+    }
   }
 
   &__data {
@@ -446,8 +500,10 @@
   }
 }
 
+.fr-video,
 .embed {
   position: relative;
+  display: block;
   overflow: hidden;
 
   &::before {
@@ -471,7 +527,7 @@
 
 .post__content h2 {
   margin-bottom: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.8rem;
   color: $white_color;
 

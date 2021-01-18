@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <!-- <base href="/"> -->
+  <title>Cтраница сайта - вход</title>
+  <meta name="description"
+    content="Игорь Васильченко самый лучший исполнитель, который способен создать качественные сайты с нуля" />
+  <meta name="keywords" content="создать сайт с нуля, верстаю быстрые шаблоны">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Игорь Васильченко">
+  <meta name="copyright"
+    content="Все права на сайт и размещенные материалы в рамках данного проекта принадлежат Олегу Василенко">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+  <!-- 3 нижние строки Chrome, Firefox OS and Opera; Windows Phone; iOS Safari    -->
+  <meta name="theme-color" content="#000">
+  <meta name="msapplication-navbutton-color" content="#000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+  <style>
+    html {
+      background-color: #ffffff;
+    }
+
+    body {
+      overflow-x: hidden;
+      opacity: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="css/libs.min.css" />
+</head>
+<!-- Это первый комментарий -->
+
+<body>
+
+
+  <!-- Custom HTML -->
+  <div class="page">
+
+    <aside class="sidebar">
+      <div class="sidebar__header">
+
+      </div>
+      <div class="sidebar__content">
+        <img class="header__img" src="img/foto_avtor.jpg" alt="фото автора">
+
+        <div class="sidebar__name_autor">Игорь Васильченко</div>
+        <div class="sidebar__position">front-end разработка, сопровождение</div>
+        <div class="sidebar_sicial">
+          <ul>
+            <li><a href="#"><img src="img/instagram.svg" alt="мой инстаграм"></a></li>
+            <li><a href="#"> <img src="img/pinterest.svg" alt=""></a></li>
+            <li><a href="#"> <img src="img/vk.svg" alt=""></a></li>
+          </ul>
+
+          <div class="sidebar__text">
+            Выполняю сопровождение и создание интернет-ресурса согласно предоставленного бизнес-плана заказчика под
+            любую идею.
+          </div>
+        </div>
+      </div>
+      <div class="sidebar__footer">
+        <a class="btn btn__red" href="#">Мои работы</a>
+        <button class="btn btn__blue" type="button">Написать мне</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="header">
+        <div class="header__left">
+          <nav class="top__nav">
+            <ul>
+              <li><a href="#">Главная</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Статьи</a>
+                <ul>
+                  <li><a href="#">Создание сайтов</a></li>
+                  <li><a href="#">Интернет-маркетинг</a></li>
+                  <li><a href="#">Продвижение видео</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Обо мне</a></li>
+              <li><a href="#">Реклама</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__right">
+          <nav class="top__nav profile__nav">
+            <ul>
+              <li><a href="#">Профиль</a></li>
+            </ul>
+          </nav>
+
+          <form class="top__search" action="/" method="post">
+            <input type="text" placeholder="Поиск по блогу">
+          </form>
+        </div>
+      </header>
+
+      <div class="container">
+        <h1 class="page__title">Вход</h1>
+        <form class="form " action="/" method="post">
+                                   
+              <div class="form_group form_group--md">
+                <input class="form_control" type="email" name="comment-email" placeholder="Ваш e-mail" >
+                <span class="form__line"></span>
+              </div>
+
+              <div class="form_group form_group--md">
+                <input class="form_control" type="password" name="comment-pasword" placeholder="Пароль">
+                <span class="form__line"></span>
+              </div>
+
+            <button type="submit" class="btn btn__blue btn__rounded">Войти</button>
+       <ul class="form__footer-list">
+         <li> <a href="#">регистрация</a> </li> /
+         <li> <a href="#">восстановить</a> </li>
+         
+       </ul>
+       
+            </form>
+
+      </div>
+
+    </main>
+  </div>
+
+  <footer>
+  </footer><!-- /footer -->
+
+  <script src="js/scripts.min.js"></script>
+</body>
+
+</html>
