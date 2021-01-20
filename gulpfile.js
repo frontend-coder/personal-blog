@@ -66,10 +66,10 @@ function browsersync() {
 
 function scripts() {
   return src([
-    'app/libs/plagins/jquery.min.js',
-    'app/libs/plagins/page-scroll-to-id-master/js/minified/jquery.malihu.PageScroll2id.min.js',
-    'app/libs/plagins/magnific-popup/jquery.magnific-popup.min.js',
-    'app/libs/plagins/slick/slick.min.js',
+ 'app/libs/plagins/jquery.min.js',
+    // 'app/libs/plagins/page-scroll-to-id-master/js/minified/jquery.malihu.PageScroll2id.min.js',
+    // 'app/libs/plagins/magnific-popup/jquery.magnific-popup.min.js',
+    // 'app/libs/plagins/slick/slick.min.js',
     'app/libs/common.js',
   ])
     .pipe(strip())

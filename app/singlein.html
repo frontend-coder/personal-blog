@@ -37,9 +37,9 @@
 
 
   <!-- Custom HTML -->
-  <div class="page">
+  <div class="page" id="page">
 
-    <aside class="sidebar">
+    <aside id="sidebar" class="sidebar">
       <div class="sidebar__header">
 
       </div>
@@ -48,6 +48,24 @@
 
         <div class="sidebar__name_autor">Игорь Васильченко</div>
         <div class="sidebar__position">front-end разработка, сопровождение</div>
+
+        <nav class=" mobile-nav">
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li class="menu-item-has-children">
+              <a href="#">Статьи</a>
+              <ul>
+                <li><a href="#">Создание сайтов</a></li>
+                <li><a href="#">Интернет-маркетинг</a></li>
+                <li><a href="#">Продвижение видео</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Обо мне</a>
+            </li>
+            <li><a href="#">Реклама</a></li>
+          </ul>
+        </nav>
+
         <div class="sidebar_sicial">
           <ul>
             <li><a href="#"><img src="img/instagram.svg" alt="мой инстаграм"></a></li>
@@ -63,7 +81,7 @@
       </div>
       <div class="sidebar__footer">
         <a class="btn btn__red" href="#">Мои работы</a>
-        <button class="btn btn__blue" type="button">Написать мне</button>
+        <button data-modal="contact-modal" class="btn btn__blue" type="button">Написать мне</button>
       </div>
     </aside>
 
@@ -85,6 +103,9 @@
               <li><a href="#">Реклама</a></li>
             </ul>
           </nav>
+          <button class="burger" type="button" id="sidebarToggle">
+            <span></span>
+          </button>
         </div>
         <div class="header__right">
           <nav class="top__nav profile__nav">
@@ -102,25 +123,25 @@
       <div class="container">
         <h1 class="page__title">Вход</h1>
         <form class="form " action="/" method="post">
-                                   
-              <div class="form_group form_group--md">
-                <input class="form_control" type="email" name="comment-email" placeholder="Ваш e-mail" >
-                <span class="form__line"></span>
-              </div>
 
-              <div class="form_group form_group--md">
-                <input class="form_control" type="password" name="comment-pasword" placeholder="Пароль">
-                <span class="form__line"></span>
-              </div>
+          <div class="form_group form_group--md">
+            <input class="form_control" type="email" name="comment-email" placeholder="Ваш e-mail">
+            <span class="form__line"></span>
+          </div>
 
-            <button type="submit" class="btn btn__blue btn__rounded">Войти</button>
-       <ul class="form__footer-list">
-         <li> <a href="#">регистрация</a> </li> /
-         <li> <a href="#">восстановить</a> </li>
-         
-       </ul>
-       
-            </form>
+          <div class="form_group form_group--md">
+            <input class="form_control" type="password" name="comment-pasword" placeholder="Пароль">
+            <span class="form__line"></span>
+          </div>
+
+          <button type="submit" class="btn btn__blue btn__rounded">Войти</button>
+          <ul class="form__footer-list">
+            <li> <a href="#">регистрация</a> </li> /
+            <li> <a href="#">восстановить</a> </li>
+
+          </ul>
+
+        </form>
 
       </div>
 
@@ -129,6 +150,67 @@
 
   <footer>
   </footer><!-- /footer -->
+
+   <div class="modal" id="contact-modal">
+    <div class="modal__content">
+      <form class="form " action="/" method="post">
+
+        <div class="form_group form_group--md">
+          <input class="form_control" type="text" name="comment-text" placeholder="Ваше имя">
+          <span class="form__line"></span>
+        </div>
+
+        <div class="form_group form_group--md">
+          <input class="form_control" type="email" name="comment-email" placeholder="Ваш e-mail" autocomplete="off">
+          <span class="form__line"></span>
+        </div>
+
+        <div class="form_group form_group--md">
+          <textarea class="form_control form_control--textarea" name="comment-text"
+            placeholder="Текст комментария"></textarea>
+          <span class="form__line"></span>
+        </div>
+
+        <button type="submit" class="btn btn__blue btn__rounded">Отправить</button>
+        <ul class="form__footer-list form__footer-popup">
+          <li> e-mail: <a href="mailto:frontendercode@gmail.com">frontendercode@gmail.com</a> </li> /
+          <li> <a href="tel:+70992122121">+7(099)212-21-21</a> </li>
+
+        </ul>
+
+      </form>
+      <button class="modal__close" type="button">
+        <img src="img/cancel.svg" alt="закрыть форму">
+      </button>
+    </div>
+  </div>
+
+  <!-- share modal popup -->
+  <div class="modal">
+    <div class="modal__content modal__content-share">
+      <div class="sidebar_sicial">
+        <ul>
+          <li><a href="#"><img src="img/share/facebook.svg" alt="поделиться в facebook"></a></li>
+          <li><a href="#"><img src="img/share/twitter.svg" alt="поделиться в twitter"></a></li>
+          <li><a href="#"><img src="img/share/vk.svg" alt="поделиться в vkontacte"></a></li>
+          <li><a href="#"><img src="img/share/copy.svg" alt="поделиться в copy"></a></li>
+        </ul>
+      </div>
+      <button class="modal__close" type="button">
+        <img src="img/cancel.svg" alt="закрыть форму">
+      </button>
+    </div>
+  </div>
+
+  <!-- share story modal popup -->
+  <div class="modal " id="story-modal">
+    <div class="modal__content modal__video_content">
+      <video class="modal__video" poster="https://placehold.it/420x580" src=""></video>
+      <button class="modal__close" type="button">
+        <img src="img/cancel.svg" alt="закрыть форму">
+      </button>
+    </div>
+  </div>
 
   <script src="js/scripts.min.js"></script>
 </body>
