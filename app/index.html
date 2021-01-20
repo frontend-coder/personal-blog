@@ -33,13 +33,13 @@
 </head>
 <!-- Это первый комментарий -->
 
-<body class="">
+<body>
 
 
   <!-- Custom HTML -->
-  <div class="page">
+  <div class="page" id="page">
 
-    <aside class="sidebar">
+    <aside id="sidebar" class="sidebar">
       <div class="sidebar__header">
 
       </div>
@@ -62,7 +62,8 @@
                   <li><a href="#">Продвижение видео</a></li>
                 </ul>
               </li>
-              <li><a href="#">Обо мне</a></li>
+              <li><a href="#">Обо мне</a>
+              </li>
               <li><a href="#">Реклама</a></li>
             </ul>
           </nav>
@@ -83,11 +84,11 @@
       </div>
       <div class="sidebar__footer">
         <a class="btn btn__red" href="#">Мои работы</a>
-        <button class="btn btn__blue" type="button">Написать мне</button>
+        <button data-modal="contact-modal" class="btn btn__blue" type="button">Написать мне</button>
       </div>
     </aside>
 
-    <main class="main">
+    <main class="main" >
       <header class="header">
         <div class="header__left">
           <nav class="top__nav">
@@ -105,7 +106,7 @@
               <li><a href="#">Реклама</a></li>
             </ul>
           </nav>
-          <button class="burger active" type="button">
+          <button class="burger" type="button" id="sidebarToggle">
             <span></span>
           </button>
         </div>
@@ -125,22 +126,22 @@
 
       <div class="container">
         <div class="stories">
-          <div class="stories__item">
+          <div class="stories__item" data-modal="story-modal">
             <img src="img/stories/stories-1.jpg" alt="stories">
             <div class="stories__title">Отдыхаю на природе</div>
             <div class="stories__date" datatime="2020-09-21 19:21">21.09.2020</div>
           </div>
-          <div class="stories__item">
+          <div class="stories__item" data-modal="story-modal">
             <img src="img/stories/stories-3.jpg" alt="stories">
             <div class="stories__title">Завершаю сложный проект</div>
             <div class="stories__date" datatime="2020-09-21 19:21">21.09.2020</div>
           </div>
-          <div class="stories__item">
+          <div class="stories__item" data-modal="story-modal">
             <img src="img/stories/stories-2.jpg" alt="stories">
             <div class="stories__title">Переехал на новую квартиру</div>
             <div class="stories__date" datatime="2020-09-21 19:21">21.09.2020</div>
           </div>
-          <div class="stories__item">
+          <div class="stories__item" data-modal="story-modal">
             <img src="img/stories/stories-4.jpg" alt="stories">
             <div class="stories__title">Осень пришла</div>
             <div class="stories__date" datatime="2020-09-21 19:21">21.09.2020</div>
@@ -152,7 +153,7 @@
       <div class="container">
         <div class="add__post">
           <form class="add__post__form" action="/" method="post">
-            <textarea class="add__post__textarea" name="post-text" placeholder="Напишите что-нибудь"></textarea>
+            <textarea class="add__post__textarea" data-autoresize name="post-text" placeholder="Напишите что-нибудь"></textarea>
 
             <div class="add__post__action">
               <label class="add__post__file" for="add-post-file">
@@ -285,7 +286,7 @@
   <footer>
   </footer><!-- /footer -->
 
-  <div class="modal">
+  <div class="modal" id="contact-modal">
     <div class="modal__content">
       <form class="form " action="/" method="post">
 
@@ -337,8 +338,8 @@
   </div>
 
   <!-- share story modal popup -->
-  <div class="modal">
-    <div class="modal__video_content ">
+  <div class="modal " id="story-modal">
+    <div class="modal__content modal__video_content">
       <video class="modal__video" poster="https://placehold.it/420x580" src=""></video>
       <button class="modal__close" type="button">
         <img src="img/cancel.svg" alt="закрыть форму">

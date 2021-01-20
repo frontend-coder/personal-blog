@@ -13,8 +13,8 @@
   background-color: rgba(#000000, 0.8);
 }
 
-.no-scroll {
-  overflow: hidden;
+.modal.show {
+  display: flex;
 }
 
 .modal__content {
@@ -23,6 +23,8 @@
   width: 100%;
   max-width: 500px;
   background-color: $accent_color;
+  transform: translateY(-50px);
+  transition: transform 200ms linear;
 }
 
 .modal__close {
@@ -54,8 +56,11 @@
   position: relative;
   margin: 0;
   padding: 0;
+  width: auto;
+  max-width: 100%;
 }
 
 .modal__video {
-
+  display: block;
+  margin: 0 auto;
 }
