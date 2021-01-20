@@ -290,6 +290,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .cabinet_avatar {
+    padding-left: 0;
+  }
+
   /* делать это разрешение */
   .stories {
     grid-template-columns: 150px 150px 150px 150px;
@@ -344,6 +348,23 @@
   /* делать это разрешение */
   .work__footer {
     margin-top: 20px;
+  }
+
+  .cabinet {
+    flex-wrap: wrap;
+  }
+
+  .cabinet_form {
+    order: 1;
+    min-width: 70%;
+    max-width: 100%;
+  }
+
+  .cabinet_avatar {
+    order: 0;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    min-width: 100%;
   }
 }
 

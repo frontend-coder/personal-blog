@@ -1131,6 +1131,7 @@ h4.related__list-title a:hover{text-decoration:underline}
 .add__post,.post{padding:1.5rem}
 }
 @media only screen and (max-width:600px){
+.cabinet_avatar{padding-left:0}
 .stories{-ms-grid-columns:150px 150px 150px 150px;grid-template-columns:150px 150px 150px 150px;overflow:auto}
 .post__footer{flex-wrap:wrap}
 .post__data li,.post__read{padding:.7rem 1.5rem}
@@ -1145,6 +1146,9 @@ h4.related__list-title a:hover{text-decoration:underline}
 }
 @media only screen and (max-width:480px){
 .work__footer{margin-top:20px}
+.cabinet{flex-wrap:wrap}
+.cabinet_form{order:1;min-width:70%;max-width:100%}
+.cabinet_avatar{order:0;margin-bottom:20px;padding-left:20px;min-width:100%}
 }
 @media only screen and (max-width:425px){
 .main{padding-bottom:4rem}
